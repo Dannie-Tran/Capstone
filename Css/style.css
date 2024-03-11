@@ -1,0 +1,276 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*! header  */
+header {
+  background-color: black;
+}
+.container {
+  width: 75%;
+  margin: 0 auto;
+}
+.container__header ul {
+  list-style: none;
+}
+.container__header ul a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 19.2px;
+  padding: 0 15px;
+  letter-spacing: 2px;
+  transition: all 0.5s;
+}
+.container__header ul li a:hover {
+  color: #189a46;
+}
+.container__header ul .active a {
+  color: #189a46;
+}
+.container__header ul li {
+  display: inline;
+}
+.container__header h1 a {
+  color: #189a46;
+  font-weight: 600;
+  font-size: 34px;
+  text-decoration: none;
+}
+.container__header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.icon-pages {
+  color: #189a46;
+}
+/* AFTER */
+/* header ul .nav-item::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  background-color: #189a46;
+} */
+
+/*! Light theme  */
+#myBody {
+  background-color: white;
+}
+#switchButton {
+  background-color: black;
+  color: #404040;
+  border: none;
+}
+
+#switchButton .fa-moon {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
+#switchButton .fa-sun {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+/*! Dark Theme*/
+.dark#myBody {
+  background-color: black;
+}
+.dark #switchButton {
+  background-color: white;
+}
+.dark #switchButton .fa-moon {
+  display: block;
+  color: #404040;
+}
+
+.dark #switchButton .fa-sun {
+  display: none;
+}
+.dark header {
+  background-color: white;
+}
+
+/* CAROUSEL  */
+.myCarousel h5 {
+  font-size: 66px;
+  line-height: 76px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.myCarousel p {
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 30px;
+  opacity: 0.9;
+}
+.myCarousel2 h5 {
+  font-size: 66px;
+  line-height: 76px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+}
+.myCarousel2 {
+  position: absolute;
+  right: 0;
+  bottom: 60%;
+  left: 7%;
+}
+.btn__carousel {
+  padding: 12px 35px;
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: capitalize;
+  font-weight: 400;
+  transition: 0.3s ease-in;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #189a46;
+}
+.btn__carousel2 {
+  padding: 12px 35px;
+  font-size: 18px;
+  line-height: 28px;
+  text-transform: capitalize;
+  font-weight: 400;
+  transition: 0.3s ease-in;
+  border-radius: 10px;
+  border: 1px solid #fff;
+  color: #189a46;
+}
+.myCarousel {
+  position: absolute;
+  right: 0;
+  bottom: 40%;
+  left: -45%;
+}
+
+/*! ABOUT US  */
+.sub-title {
+  text-align: center;
+}
+.sub-title h3 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+  text-transform: capitalize;
+  color: #ddd;
+}
+.sub-title h6 {
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 2em;
+  letter-spacing: 1px;
+  color: red;
+}
+.read {
+  font-size: 17px;
+  padding: 0;
+  border-bottom: 2px solid #189a46;
+  color: #dddddd;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  border-radius: 0;
+  margin-top: 20px;
+  display: inline-block;
+  text-transform: capitalize;
+}
+.sub-title p {
+  color: #afafaf;
+}
+.aboutus {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: black;
+}
+
+/*! PRODUCT  */
+.product__big {
+  background-color: #222;
+  padding-top: 100px;
+  padding-bottom: 80px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.col__1 {
+  width: 33.33%;
+  margin-bottom: 30px;
+}
+.area-box {
+  padding: 40px 30px;
+  transition: all 0.5s ease 0s;
+  border-radius: 5px;
+  background-color: #151515;
+  position: relative;
+  margin-right: 25px;
+}
+.icon i {
+  color: #189a46;
+  font-size: 30px;
+}
+.area-box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  display: block;
+  color: #ddd;
+}
+.area-box p {
+  font-size: 1.1em;
+  line-height: 28px;
+  color: #afafaf;
+}
+
+/*! WHY CHOOSE US  */
+.why {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: #222;
+}
+.row__img {
+  width: 50%;
+  position: relative;
+}
+.row__img img {
+  width: 100%;
+  padding-left: 3rem;
+}
+.row__text {
+  width: 50%;
+}
+.row__text {
+  align-self: left;
+}
+ul {
+  list-style: none;
+}
+.row__text ul li {
+  font-style: normal;
+  font-size: 16px;
+  line-height: 26px;
+  color: #ddd;
+  margin: 15px 0;
+  font-weight: 600;
+}
+.cont-4 li span i {
+  color: #189a46;
+  margin-right: 12px;
+  background: #222;
+  font-size: 18px;
+  padding: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
