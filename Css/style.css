@@ -213,7 +213,7 @@ header {
 }
 .fa-moon,
 .fa-sun {
-  font-size: 25px;
+  font-size: 30px;
 }
 
 /*! Dark Theme*/
@@ -242,6 +242,9 @@ header {
 }
 .dark .why {
   background-color: white;
+}
+.dark .sub-title h3 {
+  color: #000c04;
 }
 
 .lightdark {
