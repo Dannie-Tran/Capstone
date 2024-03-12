@@ -22,7 +22,7 @@
       referrerpolicy="no-referrer"
     />
     <!-- main css  -->
-    <link rel="stylesheet" href="./Css/style.css"/>
+    <link rel="stylesheet" href="./Css/style.css" />
   </head>
   <body id="myBody">
     <header>
@@ -31,23 +31,76 @@
           <a href="#">Pooch Care</a>
         </h1>
         <nav>
-          <ul>
+          <ul class="nav nav-tabs">
             <li class="nav-item active"><a href="#">Home</a></li>
             <li class="nav-item"><a href="#">About</a></li>
             <li class="nav-item"><a href="#">Services</a></li>
             <li class="nav-item"><a href="#">Gallery</a></li>
-            <li class="nav-item">
-              <a href="#">
-                Pages
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-expanded="false"
+                >Pages
                 <i class="fa-solid fa-angle-down icon-pages"></i>
               </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Blog Posts</a>
+                <a class="dropdown-item" href="#">Langding page</a>
+              </div>
             </li>
+
             <li class="nav-item"><a href="#">Contact</a></li>
+
+            <!--! search  -->
             <li>
-              <button id="switchButton">
-                <i class="fa-regular fa-moon"></i>
-                <i class="fa-regular fa-sun"></i>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-toggle="modal"
+                data-target="#exampleModal"
+                data-whatever="@mdo"
+              >
+                <span>
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </span>
               </button>
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content mySearch">
+                    <div class="modal-header">
+                      <input type="search" placeholder="Search..." />
+                      <button type="submit">Search</button>
+
+                      <span
+                        aria-hidden="true"
+                        class="btn btn-secondary close"
+                        data-dismiss="modal"
+                        >&times;</span
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--! light, dark theme  -->
+            <li>
+              <div class="lightdark">
+                <button id="switchButton">
+                  <i class="fa-regular fa-moon"></i>
+                  <i class="fa-regular fa-sun"></i>
+                </button>
+              </div>
             </li>
           </ul>
         </nav>
@@ -146,8 +199,8 @@
 
     <!--! ABOUT US  -->
     <section class="aboutus">
-      <div class="container">
-        <div class="sub-title">
+      <div class="container sub-container">
+        <div class="sub-title sub-about">
           <h6>ABOUT US</h6>
           <h3>
             We Love Your Pets Like They Are Our
@@ -318,7 +371,7 @@
             <img src="./img/ab.jpg" alt="" />
           </div>
 
-          <div class="row__text sub-title">
+          <div class="row__text why__title">
             <h6>WHY CHOOSE US</h6>
             <h3>What We Offer For You</h3>
             <p>
@@ -369,7 +422,178 @@
       </div>
     </section>
 
+    <!--! number  -->
+    <section class="number">
+      <div class="container">
+        <div class="number__content">
+          <div class="number__item">
+            <p class="counter">730</p>
+            <h4>Happy Clients</h4>
+          </div>
+
+          <div class="number__item">
+            <p class="counter">80</p>
+            <h4>Professionals</h4>
+          </div>
+
+          <div class="number__item">
+            <p class="counter">812</p>
+            <h4>Adopted Pets</h4>
+          </div>
+
+          <div class="number__item">
+            <p class="counter">90</p>
+            <h4>Awards</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--! Our Plans  -->
+    <section class="ourplans">
+      <div class="container">
+        <div class="our__text">
+          <h6>Our Plans</h6>
+          <h3>Affordable Packages</h3>
+        </div>
+
+        <div class="our__content">
+          <div class="our__left">
+            <div class="our__1">
+              <div class="our__top">
+                <h6>Free Package</h6>
+                <h4>
+                  <label>$</label>
+                  0
+                  <span>/month</span>
+                </h4>
+              </div>
+
+              <div class="our__bottom">
+                <div class="our__bottom1">
+                  <ul>
+                    <li>5 Dog Walk</li>
+                    <li>3 Vet Visit</li>
+                    <li>3 Pet Spa</li>
+                    <li>Free Supports</li>
+                    <li>Customer Support</li>
+                  </ul>
+                </div>
+                <div class="buy-button">
+                  <a href="#">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="our__left">
+            <div class="our__1">
+              <div class="our-top">
+                <h5>Save 10%</h5>
+                <h6>Standard Package</h6>
+                <h4>
+                  <label>$</label>
+                  39
+                  <span>/month</span>
+                </h4>
+              </div>
+
+              <div class="our__bottom">
+                <div class="our__bottom1">
+                  <ul>
+                    <li>5 Dog Walk</li>
+                    <li>3 Vet Visit</li>
+                    <li>3 Pet Spa</li>
+                    <li>Free Supports</li>
+                    <li>Customer Support</li>
+                  </ul>
+                </div>
+                <div class="buy-button">
+                  <a href="#">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="our__left">
+            <div class="our__1">
+              <div class="our__top">
+                <h6>Pro Package</h6>
+                <h4>
+                  <label>$</label>
+                  89
+                  <span>/month</span>
+                </h4>
+              </div>
+
+              <div class="our__bottom">
+                <div class="our__bottom1">
+                  <ul>
+                    <li>5 Dog Walk</li>
+                    <li>3 Vet Visit</li>
+                    <li>3 Pet Spa</li>
+                    <li>Free Supports</li>
+                    <li>Customer Support</li>
+                  </ul>
+                </div>
+                <div class="buy-button">
+                  <a href="#">Buy Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--! BETTER PET NUTRITION -->
+    <section class="better">
+      <div class="container">
+        <div class="better__content">
+          <div class="better__title">
+            <h6>BETTER PET NUTRITION.</h6>
+            <h3>The Finest Fresh Food And All Your Pet Needs.</h3>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem
+              ipsum dolor sit amet elit consec tetur adipisi elit.
+              <br />
+              Lorem ipsum dolor sit amet elit consec tetur adipisi elit. Iure
+              voluptatibus explicabo officia.
+            </p>
+          </div>
+
+          <div class="video">
+            <div class="video-1">
+              <img src="./img/banner2.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer></footer>
+
+    <!-- JQUERY  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!-- COUNTUP  -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.js"
+      integrity="sha512-ZKNVEa7gi0Dz4Rq9jXcySgcPiK+5f01CqW+ZoKLLKr9VMXuCsw3RjWiv8ZpIOa0hxO79np7Ec8DDWALM0bDOaQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="./js/jquery.countup.js"></script>
+
+    <script>
+      $(".counter").countUp();
+    </script>
+
+    <!-- light, dark  -->
     <script src="./js/light-dark.js"></script>
 
     <!-- bundle bs4  -->
