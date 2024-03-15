@@ -1,664 +1,715 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pooch Care</title>
 
-<head>
+    <!-- BS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pooch Care</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-  <!-- BS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  
-  <!-- awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./Css/style.css" />
+    <link rel="stylesheet" href="./Css/mode.css" />
+  </head>
 
+  <body>
+    <!-- header -->
+    <div class="header" id="header">
+      <a class="namePage" href="">Pooch Care</a>
+      <div class="navbar">
+        <div class="div-nav" id="myNavbar">
+          <button class="button-nav">Home</button>
+          <button class="button-nav">About</button>
+          <button class="button-nav">Services</button>
+          <button class="button-nav">Gallery</button>
+          <button class="button-nav">Pages</button>
+          <button class="button-nav">Contact</button>
+        </div>
 
-  <!-- main css -->
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/mode.css">
+        <div class="display-search">
+          <button
+            class="button-search"
+            onclick="toggleSearch()"
+            id="button-search"
+          >
+            <i class="ph ph-magnifying-glass search-icon"></i>
+          </button>
 
-</head>
-
-<body>
-  <!-- header -->
-  <div class="header" id="header">
-    <a class="namePage" href="">Pooch Care</a>
-    <div class="navbar">
-      <div class="div-nav" id="myNavbar">
-        <button class="button-nav">Home</button>
-        <button class="button-nav">About</button>
-        <button class="button-nav">Services</button>
-        <button class="button-nav">Gallery</button>
-        <button class="button-nav">Pages</button>
-        <button class="button-nav">Contact</button>
-      </div>
-
-      <div class="display-search">
-        <button class="button-search" onclick="toggleSearch()" id="button-search">
-          <i class="ph ph-magnifying-glass search-icon"></i>
+          <div id="search-overlay" class="search-overlay">
+            <div class="search-container">
+              <button class="search-close" onclick="toggleSearch()">
+                <i class="ph ph-x"></i>
+              </button>
+              <input type="text" placeholder="Search..." id="search-input" />
+              <button
+                class="btn-services search-submit"
+                onclick="performSearch()"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+        </div>
+        <button class="btn-moon" onclick="toggleIcon()">
+          <i id="moonIcon" class="ph ph-moon"></i>
         </button>
+      </div>
+      <button class="hamburger-icon" onclick="toggleNavbar()">&#9776;</button>
+    </div>
 
-        <div id="search-overlay" class="search-overlay">
-          <div class="search-container">
-            <button class="search-close" onclick="toggleSearch()">
-              <i class="ph ph-x"></i>
-            </button>
-            <input type="text" placeholder="Search..." id="search-input">
-            <button class="btn-services search-submit" onclick="performSearch()">
-              Search
-            </button>
+    <!-- carousel -->
+    <div class="container">
+      <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="carousel-display">
+              <img class="img" src="./img/banner1.jpg" alt="..." />
+              <div class="img-inner">
+                <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
+                <p class="p-img-inner">Keeps your Pet Smiling</p>
+                <div style="display: flex; margin-top: 48px">
+                  <a class="btnRM-img-inner" href="#">Read More</a>
+                  <a class="btnCT-img-inner" href="#">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-display">
+              <img class="img" src="./img/banner2.jpg" alt="..." />
+              <div class="img-inner img-inner-left">
+                <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
+                <p class="p-img-inner">Keeps your Pet Smiling</p>
+                <div style="display: flex; margin-top: 48px">
+                  <a class="btnRM-img-inner" href="#">Read More</a>
+                  <a class="btnCT-img-inner" href="#">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-display">
+              <img class="img" src="./img/banner1.jpg" alt="..." />
+              <div class="img-inner">
+                <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
+                <p class="p-img-inner">Keeps your Pet Smiling</p>
+                <div style="display: flex; margin-top: 48px">
+                  <a class="btnRM-img-inner" href="#">Read More</a>
+                  <a class="btnCT-img-inner" href="#">Contact Us</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="carousel-display">
+              <img class="img" src="./img/banner1.jpg" alt="..." />
+              <div class="img-inner img-inner-left">
+                <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
+                <p class="p-img-inner">Keeps your Pet Smiling</p>
+                <div class="btn-img-inner">
+                  <a class="btnRM-img-inner" href="#">Read More</a>
+                  <a class="btnCT-img-inner" href="#">Contact Us</a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <button class="btn-moon" onclick="toggleIcon()">
-        <i id="moonIcon" class="ph ph-moon"></i>
-      </button>
     </div>
-    <button class="hamburger-icon" onclick="toggleNavbar()">&#9776;</button>
-  </div>
 
-  <!-- carousel -->
-  <div class="container">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-          aria-label="Slide 4"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="carousel-display">
-            <img class="img" src="./img/banner1.jpg" alt="...">
-            <div class="img-inner">
-              <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
-              <p class="p-img-inner">Keeps your Pet Smiling</p>
-              <div style="display: flex; margin-top: 48px;">
-                <a class="btnRM-img-inner" href="#">Read More</a>
-                <a class="btnCT-img-inner" href="#">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-display">
-            <img class="img" src="./img/banner2.jpg" alt="...">
-            <div class="img-inner img-inner-left">
-              <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
-              <p class="p-img-inner">Keeps your Pet Smiling</p>
-              <div style="display: flex; margin-top: 48px;">
-                <a class="btnRM-img-inner" href="#">Read More</a>
-                <a class="btnCT-img-inner" href="#">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-display">
-            <img class="img" src="./img/banner1.jpg" alt="...">
-            <div class="img-inner">
-              <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
-              <p class="p-img-inner">Keeps your Pet Smiling</p>
-              <div style="display: flex; margin-top: 48px;">
-                <a class="btnRM-img-inner" href="#">Read More</a>
-                <a class="btnCT-img-inner" href="#">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <div class="carousel-display">
-            <img class="img" src="./img/banner1.jpg" alt="...">
-            <div class="img-inner img-inner-left">
-              <h5 class="h5-img-inner">Delivering happiness for Pets</h5>
-              <p class="p-img-inner">Keeps your Pet Smiling</p>
-              <div class="btn-img-inner">
-                <a class="btnRM-img-inner" href="#">Read More</a>
-                <a class="btnCT-img-inner" href="#">Contact Us</a>
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- about -->
+    <div class="div-about" id="div-about">
+      <div class="content-about">
+        <h6 class="title-about">ABOUT US</h6>
+        <h3 class="subTitle-about">We Love Your Pets Like They Are Our Own</h3>
+        <p class="substance-about">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+          hic odio voluptatem tenetur consequatur. Vestibulum ante ipsum primis
+          in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla
+          mollis dapibus nunc, ut rhoncus turpis sodales quis.
+        </p>
+        <a class="button-readMore">Read More</a>
       </div>
     </div>
-  </div>
 
-  <!-- about -->
-  <div class="div-about" id="div-about">
-    <div class="content-about">
-      <h6 class="title-about">ABOUT US</h6>
-      <h3 class="subTitle-about">We Love Your Pets Like They Are Our Own</h3>
-      <p class="substance-about">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur hic odio voluptatem tenetur consequatur.
-        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla mollis dapibus
-        nunc, ut rhoncus turpis sodales quis.
-      </p>
-      <a class="button-readMore">Read More</a>
-    </div>
-  </div>
-
-  <!-- service -->
-  <div class="div-bg" id="div-bg">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 div-grid" id="div-grid">
-      <div class="col col-sm-6">
-        <div>
+    <!-- service -->
+    <div class="div-bg" id="div-bg">
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 div-grid"
+        id="div-grid"
+      >
+        <div class="col col-sm-6">
+          <div>
+            <div class="div-icon">
+              <i class="fa-solid fa-snowflake icon-grid"></i>
+            </div>
+            <a class="a-content-grid">Dog Walking</a>
+            <p class="substance-grid">
+              Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet
+              laoreet. Lorem ipsum dolor sit amet Ut blandit eu leo.
+            </p>
+            <a class="button-readMore">Read More</a>
+          </div>
+        </div>
+        <div class="col col-lg-4 col-sm-6">
           <div class="div-icon">
-            <i class="fa-solid fa-snowflake icon-grid"></i>
+            <i class="fa fa-cutlery icon-grid" aria-hidden="true"></i>
           </div>
-          <a class="a-content-grid">Dog Walking</a>
+          <a class="a-content-grid">Healthy Meals</a>
           <p class="substance-grid">
-            Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet laoreet. Lorem ipsum dolor sit amet Ut
-            blandit eu leo.
+            Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet
+            laoreet. Lorem ipsum dolor sit amet Ut blandit eu leo.
+          </p>
+          <a class="button-readMore">Read More</a>
+        </div>
+        <div class="col col-sm-6">
+          <div class="div-icon">
+            <i class="fa fa-sign-language icon-grid" aria-hidden="true"></i>
+          </div>
+          <a class="a-content-grid">Pet Sitting</a>
+          <p class="substance-grid">
+            Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet
+            laoreet. Lorem ipsum dolor sit amet Ut blandit eu leo.
+          </p>
+          <a class="button-readMore">Read More</a>
+        </div>
+        <div class="col col-sm-6">
+          <div class="div-icon">
+            <i class="fa fa-sitemap icon-grid" aria-hidden="true"></i>
+          </div>
+          <a class="a-content-grid">Dog Activities</a>
+          <p class="substance-grid">
+            Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet
+            laoreet. Lorem ipsum dolor sit amet Ut blandit eu leo.
+          </p>
+          <a class="button-readMore">Read More</a>
+        </div>
+        <div class="col col-sm-6">
+          <div class="div-icon">
+            <i class="fa fa-shower icon-grid" aria-hidden="true"></i>
+          </div>
+          <a class="a-content-grid">Pet Daycare</a>
+          <p class="substance-grid">
+            Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet
+            laoreet. Lorem ipsum dolor sit amet Ut blandit eu leo.
+          </p>
+          <a class="button-readMore">Read More</a>
+        </div>
+        <div class="col col-sm-6">
+          <div class="div-icon">
+            <i class="fa fa-user-md icon-grid" aria-hidden="true"></i>
+          </div>
+          <a class="a-content-grid">Pet Grooming</a>
+          <p class="substance-grid">
+            Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet
+            laoreet. Lorem ipsum dolor sit amet Ut blandit eu leo.
           </p>
           <a class="button-readMore">Read More</a>
         </div>
       </div>
-      <div class="col col-lg-4 col-sm-6">
-        <div class="div-icon">
-          <i class="fa fa-cutlery icon-grid" aria-hidden="true"></i>
-        </div>
-        <a class="a-content-grid">Healthy Meals</a>
-        <p class="substance-grid">
-          Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet laoreet. Lorem ipsum dolor sit amet Ut
-          blandit eu leo.
-        </p>
-        <a class="button-readMore">Read More</a>
-      </div>
-      <div class="col col-sm-6">
-        <div class="div-icon">
-          <i class="fa fa-sign-language icon-grid" aria-hidden="true"></i>
-        </div>
-        <a class="a-content-grid">Pet Sitting</a>
-        <p class="substance-grid">
-          Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet laoreet. Lorem ipsum dolor sit amet Ut
-          blandit eu leo.
-        </p>
-        <a class="button-readMore">Read More</a>
-      </div>
-      <div class="col col-sm-6">
-        <div class="div-icon">
-          <i class="fa fa-sitemap icon-grid" aria-hidden="true"></i>
-        </div>
-        <a class="a-content-grid">Dog Activities</a>
-        <p class="substance-grid">
-          Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet laoreet. Lorem ipsum dolor sit amet Ut
-          blandit eu leo.
-        </p>
-        <a class="button-readMore">Read More</a>
-      </div>
-      <div class="col col-sm-6">
-        <div class="div-icon">
-          <i class="fa fa-shower icon-grid" aria-hidden="true"></i>
-        </div>
-        <a class="a-content-grid">Pet Daycare</a>
-        <p class="substance-grid">
-          Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet laoreet. Lorem ipsum dolor sit amet Ut
-          blandit eu leo.
-        </p>
-        <a class="button-readMore">Read More</a>
-      </div>
-      <div class="col col-sm-6">
-        <div class="div-icon">
-          <i class="fa fa-user-md icon-grid" aria-hidden="true"></i>
-        </div>
-        <a class="a-content-grid">Pet Grooming</a>
-        <p class="substance-grid">
-          Vivamus a ligula quam. Ut blandit eu leo non. Duis sed doloramet laoreet. Lorem ipsum dolor sit amet Ut
-          blandit eu leo.
-        </p>
-        <a class="button-readMore">Read More</a>
-      </div>
     </div>
-  </div>
 
-  <!-- choose -->
-  <div class="div-benefit" id="div-benefit">
-    <div class="content-benefit">
-      <div class="div-img-benefit">
-        <img class="img-benefit" src="./img/ab.jpg" />
-      </div>
-      <div class="subContent-benefit">
-        <p class="title-about">Why choose us</p>
-        <h3 class="subTitle-about text-dark-mode">What We Offer For You</h3>
-        <p class="substance-benefit">
-          Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud.Lorem ipsum dolor sit amet, consectetur adipisicingelit.
-        </p>
-        <ul>
-          <li class="li-spacing-benefit li-dark-mode">
-            <span class="fa fa-check check-icon"></span>
-            Certified Groomer
-          </li>
-          <li class="li-spacing-benefit li-dark-mode">
-            <span class="fa fa-check check-icon"></span>
-            10 Years of Experience
-          </li>
-          <li class="li-spacing-benefit li-dark-mode">
-            <span class="fa fa-check check-icon"></span>
-            Pet Lover
-          </li>
-          <li class="li-spacing-benefit li-dark-mode">
-            <span class="fa fa-check check-icon"></span>
-            Customer Supports
-          </li>
-          <li class="li-spacing-benefit li-dark-mode">
-            <span class="fa fa-check check-icon"></span>
-            Veterinary Help
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- number -->
-  <div class="div-spacing-media-ourPlan"
-    style="height: 237px; width: 100%; background-color: #189A46; display: flex; justify-content: center; align-items: center;">
-    <div style="display: flex; width: 1180px;">
-      <div class="text-center" style="flex: 1">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 div-grid-js">
-          <div class=" col-2">
-            <p class="p-dynamicText" dataVal="730">
-              730
-            </p>
-            <p class="p-subDynamicText">
-              Happy Clients
-            </p>
-          </div>
-          <div class=" col-2">
-            <p class="p-dynamicText" dataVal="80">
-              80
-            </p>
-            <p class="p-subDynamicText">
-              Professionals
-            </p>
-          </div>
-          <div class=" col-2">
-            <p class="p-dynamicText" dataVal="812">
-              812
-            </p>
-            <p class="p-subDynamicText">
-              Adopted Pets
-            </p>
-          </div>
-          <div class=" col-2">
-            <p class="p-dynamicText" dataVal="90">
-              90
-            </p>
-            <p class="p-subDynamicText">
-              Awards
-            </p>
-          </div>
+    <!-- choose -->
+    <div class="div-benefit" id="div-benefit">
+      <div class="content-benefit">
+        <div class="div-img-benefit">
+          <img class="img-benefit" src="./img/ab.jpg" />
         </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- our plans -->
-  <div class="div-ourPlan div-spacing-media-ourPlan" id="div-ourPlan">
-    <div class="spacing-ourPlan" id="spacing-ourPlan">
-      <div class="content-ourPlan" id="content-ourPlan">
-        <h6 class="title-ourPlan">Our Plans</h6>
-        <h3 class="subTitle-about subTitle-ourPlan">Affordable Packages</h3>
-        <div class="text-center">
-          <div
-            class="row row-cols-1 row-cols-md-2 row-cols-lg-3 col-2-ourPlan spacing-grid-ourPlan custom-row-cols-lg-3">
-            <div class="col col-2-ourPlan col-3">
-              <h6 class="h6-ourPlan">
-                Free Packages
-              </h6>
-              <h4 class="h4-ourPlan">
-                <label class="label-ourPlan">$</label>
-                0
-                <Span class="span-ourPlan">/month</Span>
-              </h4>
-              <div class="services-ourPlan">
-                <div>
-                  <ul>
-                    <li class="li-services">5 Dog Walk</li>
-                    <li class="li-services">3 Vet Visit</li>
-                    <li class="li-services">3 Pet Spa</li>
-                    <li class="li-services">Free Supports</li>
-                    <li class="li-services">Customer Support</li>
-                  </ul>
-                  <div style="margin-top: 2em;">
-                    <button class="btn-services">
-                      Buy Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col col-2-ourPlan col-middle">
-              <div class="div-bg-middle">
-                <h5 class="h5-ourPlan">Save 10%</h5>
-                <h6 class="h6-ourPlan color-ourPlan-middle">
-                  Standard Package
-                </h6>
-                <h4 class="h4-ourPlan color-ourPlan-middle">
-                  <label class="label-ourPlan">$</label>
-                  39
-                  <Span class="span-ourPlan color-ourPlan-middle">/month</Span>
-                </h4>
-              </div>
-              <div class="services-ourPlan services-ourPlan-middle">
-                <div style="text-align: center;">
-                  <ul>
-                    <li class="li-services">5 Dog Walk</li>
-                    <li class="li-services">3 Vet Visit</li>
-                    <li class="li-services">3 Pet Spa</li>
-                    <li class="li-services">Free Supports</li>
-                    <li class="li-services">Customer Support</li>
-                  </ul>
-                  <div style="margin-top: 2em;">
-                    <button class="btn-services">
-                      Get Started
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col col-2-ourPlan col-3">
-              <h6 class="h6-ourPlan">
-                Pro Package
-              </h6>
-              <h4 class="h4-ourPlan">
-                <label class="label-ourPlan">$</label>
-                89
-                <Span class="span-ourPlan">/month</Span>
-              </h4>
-              <div class="services-ourPlan">
-                <div>
-                  <ul>
-                    <li class="li-services">5 Dog Walk</li>
-                    <li class="li-services">3 Vet Visit</li>
-                    <li class="li-services">3 Pet Spa</li>
-                    <li class="li-services">Free Supports</li>
-                    <li class="li-services">Customer Support</li>
-                  </ul>
-                  <div style="margin-top: 2em;">
-                    <button class="btn-services">
-                      Buy Now
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- video -->
-  <div class="div-ourPlan" id="div-better">
-    <div class="spacing-ourPlan" id="spacing-better">
-      <div class="content-ourPlan navbar" id="content-better">
-        <div>
-          <h6 class="title-bpn">BETTER PET NUTRITION</h6>
-          <h3 class="subTitle-about" style="text-align: center;">
-            The Finest Fresh Food And All Your Pet Needs.
-          </h3>
-        </div>
-        <p class="substance-bpn">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet elit consec tetur adipisi
-          elit. Lorem ipsum dolor sit amet elit consec tetur adipisi elit. Iure voluptatibus explicabo officia.
-        </p>
-        <div class="video-container">
-          <img class="img-bpn" src="./img/banner2.jpg" />
-          <button class="play-button" id="playButton">
-            <i class="fa fa-play-circle" aria-hidden="true"></i>
-          </button>
-          <div class="video-overlay" id="videoOverlay">
-            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TESTIMONIALS -->
-  <div class="div-ourPlan" id="div-test">
-    <div class="spacing-test" id="spacing-test">
-      <div class="content-ourPlan" id="content-test">
-        <div>
-          <h6 class="title-bpn">TESTIMONIALS</h6>
-          <h3 class="subTitle-about subTitle-test" style="text-align: center;">
-            Happy Clients & Feedbacks
-          </h3>
-          <section class="testimonials">
-            <div class="containers">
-              <div class="testimonials-content">
-                <div class="swiper testimonials-slider js-testimonials-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide testimonials-item">
-                      <div class="info">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae laudantium
-                          voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                          Dolores molestias adipisci dolor sit amet!.”
-                        </p>
-                        <div style="display: flex;">
-                          <img class="img-test" src="./img/f1.jpg" />
-                          <div class="text-box">
-                            <h3 class="name">John wilson</h3>
-                            <span class="job">Example City</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide testimonials-item">
-                      <div class="info">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae laudantium
-                          voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                          Dolores molestias adipisci dolor sit amet!."
-                        </p>
-                        <div style="display: flex;">
-                          <img class="img-test" src="./img/f2.jpg" />
-                          <div class="text-box">
-                            <h3 class="name">Julia Sakura</h3>
-                            <span class="job">Example City</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide testimonials-item">
-                      <div class="info">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae laudantium
-                          voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                          Dolores molestias adipisci dolor sit amet!."
-                        </p>
-                        <div style="display: flex;">
-                          <img class="img-test" src="./img/f3.jpg" />
-                          <div class="text-box">
-                            <h3 class="name">Roy Linderson</h3>
-                            <span class="job">Example City</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide testimonials-item">
-                      <div class="info">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae laudantium
-                          voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                          Dolores molestias adipisci dolor sit amet!."
-                        </p>
-                        <div style="display: flex;">
-                          <img class="img-test" src="./img/f4.jpg" />
-                          <div class="text-box">
-                            <h3 class="name">Mike Thyson</h3>
-                            <span class="job">Example City</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide testimonials-item">
-                      <div class="info">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae laudantium
-                          voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                          Dolores molestias adipisci dolor sit amet!."
-                        </p>
-                        <div style="display: flex;">
-                          <img class="img-test" src="./img/f2.jpg" />
-                          <div class="text-box">
-                            <h3 class="name">Julia Sakura</h3>
-                            <span class="job">Example City</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="swiper-slide testimonials-item">
-                      <div class="info">
-                        <p>
-                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit beatae laudantium
-                          voluptate rem ullam dolore nisi voluptatibus esse quasi, doloribus tempora.
-                          Dolores molestias adipisci dolor sit amet!."
-                        </p>
-                        <div style="display: flex;">
-                          <img class="img-test" src="./img/f3.jpg" />
-                          <div class="text-box">
-                            <h3 class="name">Roy Linderson</h3>
-                            <span class="job">Example City</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-                <div class="swiper-pagination js-testimonials-pagination"></div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- stay -->
-  <div class="div-ourPlan" style="padding: 0 20px" id="div-update">
-    <div class="spacing-ourPlan" id="spacing-update">
-      <div class="content-update" id="content-update">
-        <h3 class="subTitle-about" style="text-align: center;">Stay Update!</h3>
-        <p class="substance-about spacing-p-update ">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-          posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis sodales quis. Integer sit amet mattis
-          quam.</p>
-        <div>
-          <div class="input-container">
-            <input type="email" class="input-update" placeholder="Enter your email..." />
-            <button class="btn-services btn-update">
-              Subcribe
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- footer -->
-  <div class="div-footer">
-    <div class="footer-container">
-      <div style="display: flex ; width: 100%;">
-        <div class="footer-content">
-          <h6 class="h6-footer">Contact information</h6>
-          <div style="display: flex;">
-            <p class="p-contact">Address :</p>
-            <p class="p-footer"> #135 block, Barnard St. Brooklyn, London 10036, UK</p>
-          </div>
-          <div style="display: flex;">
-            <p class="p-contact">Phone :</p>
-            <p class="p-footer"> +(12)234-11-24</p>
-          </div>
-          <div style="display: flex;">
-            <p class="p-contact">Email :</p>
-            <p class="p-footer"> example@mail.com</p>
-          </div>
-          <div>
-            <i class="ph ph-facebook-logo p-footer"></i>
-            <i class="ph ph-twitter-logo p-footer"></i>
-            <i class="ph ph-dribbble-logo p-footer"></i>
-            <i class="ph ph-google-logo p-footer"></i>
-          </div>
-        </div>
-        <div class="footer-content" style="display: flex;">
-          <div style="flex: 1">
-            <h6 class="h6-footer">Archives</h6>
-            <p class="p-footer">December 2020</p>
-          </div>
-          <div style="flex: 1">
-            <h6 class="h6-footer">Categories</h6>
-            <p class="p-footer">Animals</p>
-            <p class="p-footer">Pets
-            <p>
-            <p class="p-footer">Pets care</p>
-            <p class="p-footer">Uncategorized</p>
-          </div>
-          <div style="flex: 1">
-            <h6 class="h6-footer">Meta</h6>
-            <p class="p-footer">Log in</p>
-            <p class="p-footer">Entries feed
-            <p>
-            <p class="p-footer">Comments feed</p>
-            <p class="p-footer">WordPress.org</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- copyright -->
-      <div class="midd-footer-28 align-center py-lg-4 py-3 mt-5">
-        <div class="container CopyRights">
-          <p class="copy-footer-28 text-center"> &copy; 2024 All Rights Reserved by <a href="#">
-              W3Layouts.</a>
+        <div class="subContent-benefit">
+          <p class="title-about">Why choose us</p>
+          <h3 class="subTitle-about text-dark-mode">What We Offer For You</h3>
+          <p class="substance-benefit">
+            Lorem ipsum dolor sit amet, consectetur adipisicingelit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud.Lorem ipsum dolor sit amet,
+            consectetur adipisicingelit.
           </p>
+          <ul>
+            <li class="li-spacing-benefit li-dark-mode">
+              <span class="fa fa-check check-icon"></span>
+              Certified Groomer
+            </li>
+            <li class="li-spacing-benefit li-dark-mode">
+              <span class="fa fa-check check-icon"></span>
+              10 Years of Experience
+            </li>
+            <li class="li-spacing-benefit li-dark-mode">
+              <span class="fa fa-check check-icon"></span>
+              Pet Lover
+            </li>
+            <li class="li-spacing-benefit li-dark-mode">
+              <span class="fa fa-check check-icon"></span>
+              Customer Supports
+            </li>
+            <li class="li-spacing-benefit li-dark-mode">
+              <span class="fa fa-check check-icon"></span>
+              Veterinary Help
+            </li>
+          </ul>
         </div>
       </div>
-      <!-- //copyright -->
-
     </div>
 
-  </div>
+    <!-- number -->
+    <div
+      class="div-spacing-media-ourPlan"
+      style="
+        height: 237px;
+        width: 100%;
+        background-color: #189a46;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div style="display: flex; width: 1180px">
+        <div class="text-center" style="flex: 1">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 div-grid-js">
+            <div class="col-2">
+              <p class="p-dynamicText" dataVal="730">730</p>
+              <p class="p-subDynamicText">Happy Clients</p>
+            </div>
+            <div class="col-2">
+              <p class="p-dynamicText" dataVal="80">80</p>
+              <p class="p-subDynamicText">Professionals</p>
+            </div>
+            <div class="col-2">
+              <p class="p-dynamicText" dataVal="812">812</p>
+              <p class="p-subDynamicText">Adopted Pets</p>
+            </div>
+            <div class="col-2">
+              <p class="p-dynamicText" dataVal="90">90</p>
+              <p class="p-subDynamicText">Awards</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-  <!-- backtotop -->
-  <a href="#" class="to-top">
-    <i class="fa fa-chevron-up" aria-hidden="true"></i>
-  </a>
+    <!-- our plans -->
+    <div class="div-ourPlan div-spacing-media-ourPlan" id="div-ourPlan">
+      <div class="spacing-ourPlan" id="spacing-ourPlan">
+        <div class="content-ourPlan" id="content-ourPlan">
+          <h6 class="title-ourPlan">Our Plans</h6>
+          <h3 class="subTitle-about subTitle-ourPlan">Affordable Packages</h3>
+          <div class="text-center">
+            <div
+              class="row row-cols-1 row-cols-md-2 row-cols-lg-3 col-2-ourPlan spacing-grid-ourPlan custom-row-cols-lg-3"
+            >
+              <div class="col col-2-ourPlan col-3">
+                <h6 class="h6-ourPlan">Free Packages</h6>
+                <h4 class="h4-ourPlan">
+                  <label class="label-ourPlan">$</label>
+                  0
+                  <span class="span-ourPlan">/month</span>
+                </h4>
+                <div class="services-ourPlan">
+                  <div>
+                    <ul>
+                      <li class="li-services">5 Dog Walk</li>
+                      <li class="li-services">3 Vet Visit</li>
+                      <li class="li-services">3 Pet Spa</li>
+                      <li class="li-services">Free Supports</li>
+                      <li class="li-services">Customer Support</li>
+                    </ul>
+                    <div style="margin-top: 2em">
+                      <button class="btn-services">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-2-ourPlan col-middle">
+                <div class="div-bg-middle">
+                  <h5 class="h5-ourPlan">Save 10%</h5>
+                  <h6 class="h6-ourPlan color-ourPlan-middle">
+                    Standard Package
+                  </h6>
+                  <h4 class="h4-ourPlan color-ourPlan-middle">
+                    <label class="label-ourPlan">$</label>
+                    39
+                    <span class="span-ourPlan color-ourPlan-middle"
+                      >/month</span
+                    >
+                  </h4>
+                </div>
+                <div class="services-ourPlan services-ourPlan-middle">
+                  <div style="text-align: center">
+                    <ul>
+                      <li class="li-services">5 Dog Walk</li>
+                      <li class="li-services">3 Vet Visit</li>
+                      <li class="li-services">3 Pet Spa</li>
+                      <li class="li-services">Free Supports</li>
+                      <li class="li-services">Customer Support</li>
+                    </ul>
+                    <div style="margin-top: 2em">
+                      <button class="btn-services">Get Started</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col col-2-ourPlan col-3">
+                <h6 class="h6-ourPlan">Pro Package</h6>
+                <h4 class="h4-ourPlan">
+                  <label class="label-ourPlan">$</label>
+                  89
+                  <span class="span-ourPlan">/month</span>
+                </h4>
+                <div class="services-ourPlan">
+                  <div>
+                    <ul>
+                      <li class="li-services">5 Dog Walk</li>
+                      <li class="li-services">3 Vet Visit</li>
+                      <li class="li-services">3 Pet Spa</li>
+                      <li class="li-services">Free Supports</li>
+                      <li class="li-services">Customer Support</li>
+                    </ul>
+                    <div style="margin-top: 2em">
+                      <button class="btn-services">Buy Now</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- video -->
+    <div class="div-ourPlan" id="div-better">
+      <div class="spacing-ourPlan" id="spacing-better">
+        <div class="content-ourPlan navbar" id="content-better">
+          <div>
+            <h6 class="title-bpn">BETTER PET NUTRITION</h6>
+            <h3 class="subTitle-about" style="text-align: center">
+              The Finest Fresh Food And All Your Pet Needs.
+            </h3>
+          </div>
+          <p class="substance-bpn">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.Lorem ipsum
+            dolor sit amet elit consec tetur adipisi elit. Lorem ipsum dolor sit
+            amet elit consec tetur adipisi elit. Iure voluptatibus explicabo
+            officia.
+          </p>
+          <div class="video-container">
+            <img class="img-bpn" src="./img/banner2.jpg" />
+            <button class="play-button" id="playButton">
+              <i class="fa fa-play-circle" aria-hidden="true"></i>
+            </button>
+            <div class="video-overlay" id="videoOverlay">
+              <iframe
+                id="videoFrame"
+                width="560"
+                height="315"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- TESTIMONIALS -->
+    <div class="div-ourPlan" id="div-test">
+      <div class="spacing-test" id="spacing-test">
+        <div class="content-ourPlan" id="content-test">
+          <div>
+            <h6 class="title-bpn">TESTIMONIALS</h6>
+            <h3 class="subTitle-about subTitle-test" style="text-align: center">
+              Happy Clients & Feedbacks
+            </h3>
+            <section class="testimonials">
+              <div class="containers">
+                <div class="testimonials-content">
+                  <div
+                    class="swiper testimonials-slider js-testimonials-slider"
+                  >
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit beatae laudantium voluptate rem ullam
+                            dolore nisi voluptatibus esse quasi, doloribus
+                            tempora. Dolores molestias adipisci dolor sit
+                            amet!.”
+                          </p>
+                          <div style="display: flex">
+                            <img class="img-test" src="./img/f1.jpg" />
+                            <div class="text-box">
+                              <h3 class="name">John wilson</h3>
+                              <span class="job">Example City</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-  <!-- Jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+                      <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit beatae laudantium voluptate rem ullam
+                            dolore nisi voluptatibus esse quasi, doloribus
+                            tempora. Dolores molestias adipisci dolor sit
+                            amet!."
+                          </p>
+                          <div style="display: flex">
+                            <img class="img-test" src="./img/f2.jpg" />
+                            <div class="text-box">
+                              <h3 class="name">Julia Sakura</h3>
+                              <span class="job">Example City</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
-  <!-- BS4 -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+                      <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit beatae laudantium voluptate rem ullam
+                            dolore nisi voluptatibus esse quasi, doloribus
+                            tempora. Dolores molestias adipisci dolor sit
+                            amet!."
+                          </p>
+                          <div style="display: flex">
+                            <img class="img-test" src="./img/f3.jpg" />
+                            <div class="text-box">
+                              <h3 class="name">Roy Linderson</h3>
+                              <span class="job">Example City</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
+                      <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit beatae laudantium voluptate rem ullam
+                            dolore nisi voluptatibus esse quasi, doloribus
+                            tempora. Dolores molestias adipisci dolor sit
+                            amet!."
+                          </p>
+                          <div style="display: flex">
+                            <img class="img-test" src="./img/f4.jpg" />
+                            <div class="text-box">
+                              <h3 class="name">Mike Thyson</h3>
+                              <span class="job">Example City</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
+                      <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit beatae laudantium voluptate rem ullam
+                            dolore nisi voluptatibus esse quasi, doloribus
+                            tempora. Dolores molestias adipisci dolor sit
+                            amet!."
+                          </p>
+                          <div style="display: flex">
+                            <img class="img-test" src="./img/f2.jpg" />
+                            <div class="text-box">
+                              <h3 class="name">Julia Sakura</h3>
+                              <span class="job">Example City</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
+                      <div class="swiper-slide testimonials-item">
+                        <div class="info">
+                          <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Velit beatae laudantium voluptate rem ullam
+                            dolore nisi voluptatibus esse quasi, doloribus
+                            tempora. Dolores molestias adipisci dolor sit
+                            amet!."
+                          </p>
+                          <div style="display: flex">
+                            <img class="img-test" src="./img/f3.jpg" />
+                            <div class="text-box">
+                              <h3 class="name">Roy Linderson</h3>
+                              <span class="job">Example City</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="swiper-pagination js-testimonials-pagination"
+                  ></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- stay -->
+    <div class="div-ourPlan" style="padding: 0 20px" id="div-update">
+      <div class="spacing-ourPlan" id="spacing-update">
+        <div class="content-update" id="content-update">
+          <h3 class="subTitle-about" style="text-align: center">
+            Stay Update!
+          </h3>
+          <p class="substance-about spacing-p-update">
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+            posuere cubilia Curae; Nulla mollis dapibus nunc, ut rhoncus turpis
+            sodales quis. Integer sit amet mattis quam.
+          </p>
+          <div>
+            <div class="input-container">
+              <input
+                type="email"
+                class="input-update"
+                placeholder="Enter your email..."
+              />
+              <button class="btn-services btn-update">Subcribe</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <!-- footer -->
+    <div class="div-footer">
+      <div class="footer-container">
+        <div style="display: flex; width: 100%">
+          <div class="footer-content">
+            <h6 class="h6-footer">Contact information</h6>
+            <div style="display: flex">
+              <p class="p-contact">Address :</p>
+              <p class="p-footer">
+                #135 block, Barnard St. Brooklyn, London 10036, UK
+              </p>
+            </div>
+            <div style="display: flex">
+              <p class="p-contact">Phone :</p>
+              <p class="p-footer">+(12)234-11-24</p>
+            </div>
+            <div style="display: flex">
+              <p class="p-contact">Email :</p>
+              <p class="p-footer">example@mail.com</p>
+            </div>
+            <div>
+              <i class="ph ph-facebook-logo p-footer"></i>
+              <i class="ph ph-twitter-logo p-footer"></i>
+              <i class="ph ph-dribbble-logo p-footer"></i>
+              <i class="ph ph-google-logo p-footer"></i>
+            </div>
+          </div>
+          <div class="footer-content" style="display: flex">
+            <div style="flex: 1">
+              <h6 class="h6-footer">Archives</h6>
+              <p class="p-footer">December 2020</p>
+            </div>
+            <div style="flex: 1">
+              <h6 class="h6-footer">Categories</h6>
+              <p class="p-footer">Animals</p>
+              <p class="p-footer">Pets</p>
+              <p></p>
+              <p class="p-footer">Pets care</p>
+              <p class="p-footer">Uncategorized</p>
+            </div>
+            <div style="flex: 1">
+              <h6 class="h6-footer">Meta</h6>
+              <p class="p-footer">Log in</p>
+              <p class="p-footer">Entries feed</p>
+              <p></p>
+              <p class="p-footer">Comments feed</p>
+              <p class="p-footer">WordPress.org</p>
+            </div>
+          </div>
+        </div>
 
-  <script src="https://unpkg.com/@phosphor-icons/web"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- copyright -->
+        <div class="midd-footer-28 align-center py-lg-4 py-3 mt-5">
+          <div class="container CopyRights">
+            <p class="copy-footer-28 text-center">
+              &copy; 2024 All Rights Reserved by <a href="#"> W3Layouts.</a>
+            </p>
+          </div>
+        </div>
+        <!-- //copyright -->
+      </div>
+    </div>
 
-  <script src="./js/function.js"></script>
-</body>
+    <!-- backtotop -->
+    <a href="#" class="to-top">
+      <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
 
+    <!-- Jquery -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- BS4 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./js/function.js"></script>
+  </body>
 </html>
